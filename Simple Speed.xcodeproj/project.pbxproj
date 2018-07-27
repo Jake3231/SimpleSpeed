@@ -13,7 +13,25 @@
 		B712B425210B77CF00463453 /* Spedometer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B712B423210B77CF00463453 /* Spedometer.xcdatamodeld */; };
 		B712B427210B77D100463453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B712B426210B77D100463453 /* Assets.xcassets */; };
 		B712B42A210B77D100463453 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B712B428210B77D100463453 /* LaunchScreen.storyboard */; };
+		B7DBDF75210B796700A01563 /* SpeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DBDF74210B796700A01563 /* SpeedController.swift */; };
+		B7DBDF7C210B826700A01563 /* ColorX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DBDF77210B826600A01563 /* ColorX.swift */; };
+		B7DBDF7D210B826700A01563 /* ArcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DBDF78210B826700A01563 /* ArcModel.swift */; };
+		B7DBDF7E210B826700A01563 /* ArrayX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DBDF7A210B826700A01563 /* ArrayX.swift */; };
+		B7DBDF7F210B826700A01563 /* ABGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DBDF7B210B826700A01563 /* ABGaugeView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B7DBDFA4210BA0AD00A01563 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B712B419210B77CF00463453 /* Spedometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spedometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +42,19 @@
 		B712B426210B77D100463453 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B712B429210B77D100463453 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B712B42B210B77D100463453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7DBDF74210B796700A01563 /* SpeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedController.swift; sourceTree = "<group>"; };
+		B7DBDF77210B826600A01563 /* ColorX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorX.swift; sourceTree = "<group>"; };
+		B7DBDF78210B826700A01563 /* ArcModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcModel.swift; sourceTree = "<group>"; };
+		B7DBDF79210B826700A01563 /* ABGaugeViewKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABGaugeViewKit.h; sourceTree = "<group>"; };
+		B7DBDF7A210B826700A01563 /* ArrayX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayX.swift; sourceTree = "<group>"; };
+		B7DBDF7B210B826700A01563 /* ABGaugeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABGaugeView.swift; sourceTree = "<group>"; };
+		B7DBDF85210BA0AA00A01563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		B7DBDF87210BA0AC00A01563 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B7DBDF89210BA0AC00A01563 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7DBDF93210BA0AD00A01563 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		B7DBDF95210BA0AD00A01563 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		B7DBDF97210BA0AD00A01563 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B7DBDF99210BA0AD00A01563 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				B712B41B210B77CF00463453 /* Spedometer */,
+				B7DBDF83210BA0AA00A01563 /* Simple Speed */,
+				B7DBDF92210BA0AD00A01563 /* Simple Speed Extension */,
 				B712B41A210B77CF00463453 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,8 +89,10 @@
 		B712B41B210B77CF00463453 /* Spedometer */ = {
 			isa = PBXGroup;
 			children = (
+				B7DBDF76210B825A00A01563 /* Gauge */,
 				B712B41C210B77CF00463453 /* AppDelegate.swift */,
 				B712B41E210B77CF00463453 /* ViewController.swift */,
+				B7DBDF74210B796700A01563 /* SpeedController.swift */,
 				B712B420210B77CF00463453 /* Main.storyboard */,
 				B712B426210B77D100463453 /* Assets.xcassets */,
 				B712B428210B77D100463453 /* LaunchScreen.storyboard */,
@@ -65,6 +100,39 @@
 				B712B423210B77CF00463453 /* Spedometer.xcdatamodeld */,
 			);
 			path = Spedometer;
+			sourceTree = "<group>";
+		};
+		B7DBDF76210B825A00A01563 /* Gauge */ = {
+			isa = PBXGroup;
+			children = (
+				B7DBDF7B210B826700A01563 /* ABGaugeView.swift */,
+				B7DBDF79210B826700A01563 /* ABGaugeViewKit.h */,
+				B7DBDF78210B826700A01563 /* ArcModel.swift */,
+				B7DBDF7A210B826700A01563 /* ArrayX.swift */,
+				B7DBDF77210B826600A01563 /* ColorX.swift */,
+			);
+			path = Gauge;
+			sourceTree = "<group>";
+		};
+		B7DBDF83210BA0AA00A01563 /* Simple Speed */ = {
+			isa = PBXGroup;
+			children = (
+				B7DBDF84210BA0AA00A01563 /* Interface.storyboard */,
+				B7DBDF87210BA0AC00A01563 /* Assets.xcassets */,
+				B7DBDF89210BA0AC00A01563 /* Info.plist */,
+			);
+			path = "Simple Speed";
+			sourceTree = "<group>";
+		};
+		B7DBDF92210BA0AD00A01563 /* Simple Speed Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B7DBDF93210BA0AD00A01563 /* InterfaceController.swift */,
+				B7DBDF95210BA0AD00A01563 /* ExtensionDelegate.swift */,
+				B7DBDF97210BA0AD00A01563 /* Assets.xcassets */,
+				B7DBDF99210BA0AD00A01563 /* Info.plist */,
+			);
+			path = "Simple Speed Extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +145,7 @@
 				B712B415210B77CF00463453 /* Sources */,
 				B712B416210B77CF00463453 /* Frameworks */,
 				B712B417210B77CF00463453 /* Resources */,
+				B7DBDFA4210BA0AD00A01563 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -93,7 +162,7 @@
 		B712B411210B77CF00463453 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = JakeSpann;
 				TargetAttributes = {
@@ -102,7 +171,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B712B414210B77CF00463453 /* Build configuration list for PBXProject "Spedometer" */;
+			buildConfigurationList = B712B414210B77CF00463453 /* Build configuration list for PBXProject "Simple Speed" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -138,8 +207,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7DBDF7E210B826700A01563 /* ArrayX.swift in Sources */,
 				B712B41F210B77CF00463453 /* ViewController.swift in Sources */,
+				B7DBDF7C210B826700A01563 /* ColorX.swift in Sources */,
+				B7DBDF7F210B826700A01563 /* ABGaugeView.swift in Sources */,
+				B7DBDF75210B796700A01563 /* SpeedController.swift in Sources */,
 				B712B41D210B77CF00463453 /* AppDelegate.swift in Sources */,
+				B7DBDF7D210B826700A01563 /* ArcModel.swift in Sources */,
 				B712B425210B77CF00463453 /* Spedometer.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +235,14 @@
 				B712B429210B77D100463453 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B7DBDF84210BA0AA00A01563 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7DBDF85210BA0AA00A01563 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -283,7 +365,7 @@
 		B712B42F210B77D100463453 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = iPhoneIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RF2WR5S7P9;
 				INFOPLIST_FILE = Spedometer/Info.plist;
@@ -301,7 +383,7 @@
 		B712B430210B77D100463453 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = iPhoneIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RF2WR5S7P9;
 				INFOPLIST_FILE = Spedometer/Info.plist;
@@ -319,7 +401,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B712B414210B77CF00463453 /* Build configuration list for PBXProject "Spedometer" */ = {
+		B712B414210B77CF00463453 /* Build configuration list for PBXProject "Simple Speed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B712B42C210B77D100463453 /* Debug */,

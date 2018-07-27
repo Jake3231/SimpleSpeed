@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14278.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,92 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Spedometer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9As-2M-jkI" customClass="ABGaugeView" customModule="Spedometer" customModuleProvider="target">
+                                <rect key="frame" x="34" y="180" width="307" height="307"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="needleColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="needleValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="arcAngle">
+                                        <real key="value" value="2.2000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="applyShadow" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundCap" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="blinkAnimate" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWR-9Y-U8f">
+                                <rect key="frame" x="116.5" y="277" width="142" height="142"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="142" id="58W-EA-47P"/>
+                                    <constraint firstAttribute="width" constant="142" id="nZJ-gE-Dq0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MPH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ns2-nl-8wP">
+                                <rect key="frame" x="166.5" y="277" width="42" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2qe-QV-qRM">
+                                <rect key="frame" x="16" y="620" width="27" height="27"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="lll-LB-aKh"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="93f-bt-BRq">
+                                <rect key="frame" x="331" y="620" width="28" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="93f-bt-BRq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="331" id="22t-Ca-Dxq"/>
+                            <constraint firstItem="93f-bt-BRq" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="56T-bf-MM8"/>
+                            <constraint firstItem="93f-bt-BRq" firstAttribute="top" secondItem="2qe-QV-qRM" secondAttribute="top" id="6X8-EZ-fwN"/>
+                            <constraint firstItem="93f-bt-BRq" firstAttribute="centerY" secondItem="2qe-QV-qRM" secondAttribute="centerY" id="M9k-2J-t72"/>
+                            <constraint firstItem="9As-2M-jkI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MOo-so-fs7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2qe-QV-qRM" secondAttribute="trailing" constant="332" id="OGY-Hk-f3V"/>
+                            <constraint firstItem="2qe-QV-qRM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SDf-Tu-mEt"/>
+                            <constraint firstAttribute="bottom" secondItem="2qe-QV-qRM" secondAttribute="bottom" constant="20" symbolic="YES" id="SdV-Eh-9Ig"/>
+                            <constraint firstItem="pWR-9Y-U8f" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UU0-UI-dEX"/>
+                            <constraint firstItem="Ns2-nl-8wP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VBz-vX-l2y"/>
+                            <constraint firstItem="pWR-9Y-U8f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="257" id="fvx-dg-g9e"/>
+                            <constraint firstItem="9As-2M-jkI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="hxN-y9-eHU"/>
+                            <constraint firstItem="9As-2M-jkI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="jd9-2d-uGZ"/>
+                            <constraint firstItem="pWR-9Y-U8f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jk1-cJ-oAw"/>
+                            <constraint firstItem="pWR-9Y-U8f" firstAttribute="top" secondItem="Ns2-nl-8wP" secondAttribute="top" id="n4t-u6-bsL"/>
+                            <constraint firstItem="9As-2M-jkI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zu7-0C-wO7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="activityImageView" destination="2qe-QV-qRM" id="r9H-Mh-5nZ"/>
+                        <outlet property="colorIndicatorView" destination="93f-bt-BRq" id="u6h-GW-6g9"/>
+                        <outlet property="gaugeView" destination="9As-2M-jkI" id="Daf-6l-B49"/>
+                        <outlet property="speedLabel" destination="pWR-9Y-U8f" id="57D-jM-JKo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="96.7016491754123"/>
         </scene>
     </scenes>
 </document>
