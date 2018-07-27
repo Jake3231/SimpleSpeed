@@ -11,11 +11,7 @@ import Foundation
 import CoreLocation
 import CoreMotion
 
-typealias Speed = CLLocationSpeed
-
-protocol SpeedManagerDelegate {
-    func speedDidChange(speed: Speed)
-}
+//typealias Speed = CLLocationSpeed // We don't need this
 
 class SpeedController: NSObject, CLLocationManagerDelegate {
     
@@ -26,6 +22,8 @@ class SpeedController: NSObject, CLLocationManagerDelegate {
         DispatchQueue.main.async {
             self.locationManager = CLLocationManager.locationServicesEnabled() ? CLLocationManager() : nil
         
+        // By default, we want no distance filter, and we're assuming automotive navigation is occuring. The activityType can change based upon the user's activity.
+            
         self.locationManager?.delegate = self
         self.locationManager?.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         self.locationManager?.distanceFilter = kCLDistanceFilterNone
@@ -45,7 +43,7 @@ class SpeedController: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == CLAuthorizationStatus.authorizedAlways || status == CLAuthorizationStatus.authorizedWhenInUse {
+        if status == CLAuthorizationStatus.authorizedAlways || status == CLAuthorizationStatus.authorizedWhenInUse { // After authorizing location access for the app, make sure that authorization for either "always" or "when in use" was selected.
             locationManager?.startUpdatingLocation()
         }
     }
@@ -54,7 +52,7 @@ class SpeedController: NSObject, CLLocationManagerDelegate {
         print("locationDidUpdate")
         if locations.count > 0 {
             let kmph = max(locations[locations.count - 1].speed / 1000 * 3600, 0);
-            delegate?.speedDidUpdate(to: kmph * 0.621371);
+            delegate?.speedDidUpdate(to: kmph * 0.621371); // Convert the kmph to mph and inform the ViewController of the speed change
         }
     }
     
@@ -66,17 +64,19 @@ class MotionManager: CMMotionActivityManager {
     
     func beginTrackingActivity() {
         self.queryActivityStarting(from: Date(), to: Date(), to: .main) { motionActivities, error in
-            //print("ma:\(motionActivities)")
+            
             var hcActivities = [CMMotionActivity()]
             motionActivities?.forEach { activity in
                 // only interested in activities that were of at least medium confidence
                 if activity.confidence == .medium || activity.confidence == .high {
                    hcActivities.append(activity)
-            }
-            }
+                }}
+            
             let bestActivity = hcActivities.max(by: { (a, b) -> Bool in
                 return Float(a.confidence.rawValue) < Float(b.confidence.rawValue)
             })
+            
+            // The if statments below check to see which type of activity the best activity is, then informs the ViewController
             if (bestActivity?.unknown)! {
                 self.delegate.activityTypeDidChange(to: .unknown)
             }

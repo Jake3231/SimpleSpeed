@@ -19,21 +19,25 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.shared.isIdleTimerDisabled = true 
-        // Do any additional setup after loading the view, typically from a nib.
+        UIApplication.shared.isIdleTimerDisabled = true
+        
+        // Set up the speed manager
         speedController.delegate = self
         speedController.startTracking()
+        
+        // Do some things to make the UI look better
         speedLabel.layer.cornerRadius = speedLabel.frame.width/2
         speedLabel.layer.masksToBounds = true
         colorIndicatorView.layer.cornerRadius = 5
         colorIndicatorView.layer.masksToBounds = true
         
-        //gaugeView.colorCodes = "FFFFFF"
+        // Set up the activity manager
         activityManager.delegate = self
         activityManager.beginTrackingActivity()
     }
     
     func activityTypeDidChange(to newActivity: userActivity) {
+        // Iterate through each possible actity type for the new activity
         switch newActivity {
         case .automotive:
             print("Driving")
@@ -69,7 +73,7 @@ class ViewController: UIViewController {
     }
     
     func speedDidUpdate(to mph: Double) {
-        //print(mph)
+        // Set the label to the rounded mph and set the needle to the exact mph
         speedLabel.text = String(Double(round(10*mph)/10))
         gaugeView.needleValue = CGFloat(mph)
     }
